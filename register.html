@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="email"],input[type="date"],input[type="mobile"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2> Registern</h2>
+        <form action="register.php" method="post" includes="login.php">
+            <input type="text" name="name" placeholder="Username" required>
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="text" name="date" placeholder="Date of Birth" required>
+            <input type="text" name="mobile" placeholder="mobile" required>
+            <input type="submit" value="Register"  href="login.html">
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="login.html">Login here</a>
+          </div>
+        </div>
+     
+       
+</body>
+</html>

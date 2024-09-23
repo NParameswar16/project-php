@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="email"],input[type="date"],input[type="mobile"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .update-delete-form {
+            display: none;
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .update-delete-form.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+    <h2>Login</h2>
+    <form action="login.php" method="post">
+    <input type="text" name="name" placeholder="Username" required>
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="text" name="date" placeholder="Date of Birth" required>
+        <input type="text" name="mobile" placeholder="mobile" required>
+        <input type="submit" value="Login">
+    </form>
+     
+    <button class="collapsible" style="background-color: #99cf9c;">Update & Delete Account</button>
+        <div class="update-delete-form">
+            <h2>Update Account</h2>
+            <form action="update.php" method="post">
+                <input type="text" name="name" placeholder="Username" required>
+                <input type="text" name="email" placeholder="Email" required>
+                <input type="text" name="date" placeholder="Date of Birth" required>
+                <input type="text" name="mobile" placeholder="mobile" required>
+                <input type="submit" value="Update">
+            </form>
+            <hr>
+            <h2>Delete Account</h2>
+            <form action="delete.php" method="post">
+                <input type="email" name="email" placeholder="email" required>
+                <input type="submit" value="Delete">
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Collapsible functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            var coll = document.getElementsByClassName('collapsible');
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    var content = this.nextElementSibling;
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                    } else {
+                        content.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
